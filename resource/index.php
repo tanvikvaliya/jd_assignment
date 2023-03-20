@@ -88,7 +88,7 @@ include('./master/header.php');
         include('./master/script.php');
     ?>
     <script>
-        <?php include('../js/index.js'); ?> 
+        <?php include('../public/js/index.js'); ?> 
     </script>
 <?php
 // import footer file

@@ -68,7 +68,7 @@
     include('./master/script.php');
     ?>
     <script>
-        <?php include('../js/form-validation.js'); ?>  
+        <?php include('../public/js/form-validation.js'); ?>  
     </script>
 <?php
 include('./master/footer.php');
