@@ -33,7 +33,7 @@ include('./master/header.php');
                     // count row of data if > 0 then will be print
                     if(mysqli_num_rows($result) > 0){
                         // while return 1 record from $result array
-                        while($row = mysqli_fetch_array($result)) {
+                        while($row = mysqli_fetch_assoc($result)) {
                         ?>
                         <tr>
                             <td>
@@ -51,6 +51,8 @@ include('./master/header.php');
                             </td>
                         </tr>
                         <?php } 
+                        // free the $result variable that will free memory
+                        mysqli_free_result($result);
                     }else{ ?>
                         <tr>
                             <td colspan="8" class="text-center">Data Not Found</td>

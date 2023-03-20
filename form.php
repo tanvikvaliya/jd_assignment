@@ -8,7 +8,7 @@
         $page_title = 'Update';
         $sql = "SELECT * FROM user_master where id = ".$_GET['id']." ";
         $result = mysqli_query($link, $sql);
-        $row = mysqli_fetch_array($result);
+        $row = mysqli_fetch_assoc($result);
     }
 ?>
 <title><?php echo $page_title ?></title>
