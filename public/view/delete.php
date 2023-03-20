@@ -1,5 +1,5 @@
 <?php
-    require_once "connection.php";
+    require_once "../../connection.php";
     if (!$link) {
         die("Connection failed: " . mysqli_connect_error());
     }

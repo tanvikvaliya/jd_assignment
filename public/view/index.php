@@ -3,7 +3,6 @@
 include('./master/header.php');
 ?>
 <title>List</title>
-  <body>
     <div class="container">
         <div class="card mt-4">
         <h5 class="card-header d-flex justify-content-between align-items-center">
@@ -86,16 +85,12 @@ include('./master/header.php');
 		</div>
 	</div>
     <?php
-        // import script source file
-        include('./master/script.html');
+        include('./master/script.php');
     ?>
     <script>
-        $(document).on('click','.delete',function(){
-            // append id for delete record
-            $('#user_id').val($(this).attr('data-id'));
-        });
+        <?php include('../js/index.js'); ?> 
     </script>
 <?php
 // import footer file
-include('./master/footer.html');
+include('./master/footer.php');
 ?>
