@@ -83,7 +83,7 @@
             let city = $('#city').val();
             let country = $('#country').val();
             let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            let mobileformat = /^\d{10}$/;
+            let mobileformat = /^[6,7,8,9][0-9]{0,9}$/;
             let is_valid = true;
             if(name == ''){
                 $('#name-error').addClass('d-block');
