@@ -1,10 +1,11 @@
 
 <?php 
-    include('./master/header.html');
+    // import header file 
+    include('./master/header.php');
     $page_title = 'Create';
+    //if user_id exist in get then record fetch
     if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
         $page_title = 'Update';
-        require_once "connection.php";
         $sql = "SELECT * FROM user_master where id = ".$_GET['id']." ";
         $result = mysqli_query($link, $sql);
         $row = mysqli_fetch_array($result);

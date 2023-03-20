@@ -7,3 +7,10 @@
     <link rel="stylesheet" href="./css/form.css">
 </head>
 <body>
+<?php
+// data connection istablish
+    require_once "connection.php";
+    if (!$link) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+?>

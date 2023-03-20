@@ -1,9 +1,6 @@
 <?php
-include('./master/header.html');
-require_once "connection.php";
-if (!$link) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+// import header file
+include('./master/header.php');
 ?>
 <title>List</title>
   <body>
@@ -29,10 +26,13 @@ if (!$link) {
                 </thead>
                 <tbody>
                     <?php
+                    // fetch existed record from user_master table
                     $sql = "SELECT * FROM user_master";
                     $result = mysqli_query($link, $sql);
                     $count = 1;
+                    // count row of data if > 0 then will be print
                     if(mysqli_num_rows($result) > 0){
+                        // while return 1 record from $result array
                         while($row = mysqli_fetch_array($result)) {
                         ?>
                         <tr>
@@ -62,7 +62,7 @@ if (!$link) {
             </table>
         </div>
     </div>
-	<!-- dlt modal for user -->
+	<!-- delete modal for user data -->
 	<div id="deleteEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -84,13 +84,16 @@ if (!$link) {
 		</div>
 	</div>
     <?php
+        // import script source file
         include('./master/script.html');
     ?>
     <script>
         $(document).on('click','.delete',function(){
+            // append id for delete record
             $('#user_id').val($(this).attr('data-id'));
         });
     </script>
 <?php
+// import footer file
 include('./master/footer.html');
 ?>
