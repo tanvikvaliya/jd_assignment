@@ -1,6 +1,6 @@
 <?php 
     // import header file 
-    include('./master/header.php');
+    include('./common/header.php');
     $page_title = 'Create';
     //if user_id exist in get then record fetch
     if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
@@ -65,12 +65,12 @@
         </div>
     </div>
     <?php
-    include('./master/script.php');
+    include('./common/script.php');
     ?>
     <script>
         <?php include('../public/js/form-validation.js'); ?>  
     </script>
 <?php
-include('./master/footer.php');
+include('./common/footer.php');
 ?>
 

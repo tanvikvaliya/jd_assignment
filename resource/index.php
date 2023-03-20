@@ -1,6 +1,6 @@
 <?php
 // import header file
-include('./master/header.php');
+include('./common/header.php');
 ?>
 <title>List</title>
     <div class="container">
@@ -85,12 +85,12 @@ include('./master/header.php');
 		</div>
 	</div>
     <?php
-        include('./master/script.php');
+        include('./common/script.php');
     ?>
     <script>
         <?php include('../public/js/index.js'); ?> 
     </script>
 <?php
 // import footer file
-include('./master/footer.php');
+include('./common/footer.php');
 ?>

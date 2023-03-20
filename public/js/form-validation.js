@@ -15,7 +15,7 @@ $( document ).on('click','#sbt-btn',function( e ) {
     let is_valid = true;
     if(name == ''){
         $('#name-error').addClass('d-block');
-        $('#name-error').text('Please enter a name.');
+        $('#name-error').text('Please enter a valid name.');
         is_valid = false;
     }else{
         $('#name-error').removeClass('d-block');
@@ -23,7 +23,7 @@ $( document ).on('click','#sbt-btn',function( e ) {
     }
     if(address == ''){
         $('#address-error').addClass('d-block');
-        $('#address-error').text('Please enter a Address.');
+        $('#address-error').text('Please enter a valid Address.');
         is_valid = false;
     }else{
         $('#address-error').removeClass('d-block');
@@ -47,7 +47,7 @@ $( document ).on('click','#sbt-btn',function( e ) {
     }
     if(city == ''){
         $('#city-error').addClass('d-block');
-        $('#city-error').text('Please enter a City.');
+        $('#city-error').text('Please enter a valid City.');
         is_valid = false;
     }else{
         $('#city-error').removeClass('d-block');
@@ -55,7 +55,7 @@ $( document ).on('click','#sbt-btn',function( e ) {
     }
     if(country == ''){
         $('#country-error').addClass('d-block');
-        $('#country-error').text('Please select a Country.');
+        $('#country-error').text('Please select a valid Country.');
         is_valid = false;
     }else{
         $('#country-error').removeClass('d-block');

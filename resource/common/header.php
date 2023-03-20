@@ -8,7 +8,7 @@
 <body>
 <?php
 // data connection istablish
-    require_once "../connection.php";
+    require_once "../db_config/config.php";
     if (!$link) {
         die("Connection failed: " . mysqli_connect_error());
     }
