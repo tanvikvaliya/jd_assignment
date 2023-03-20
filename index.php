@@ -1,44 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JD Assignment</title>
-<link rel="stylesheet" type="text/css" href="./css/custom.css" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <?php
-// Include config file
+include('./master/header.html');
 require_once "connection.php";
 if (!$link) {
     die("Connection failed: " . mysqli_connect_error());
 }
 ?>
+<title>List</title>
   <body>
     <div class="container">
-        <div class="table-wrapper">
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-6">
-						<h2>Manage User</h2>
-					</div>
-					<div class="col-sm-6">
-						<a href="./form.php" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add User</span></a>
-						<!-- <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						 -->
-					</div>
-                </div>
-            </div>
-            <table class="table table-striped table-hover">
+        <div class="card mt-4">
+        <h5 class="card-header d-flex justify-content-between align-items-center">
+            Manage User
+            <a href="./form.php" class="btn btn-success"><span>Add User</span></a>
+        </h5>
+        <div class="card-body">
+            <table class="table">
                 <thead>
                     <tr>
-						<th>Sr No.</th>
+                        <th>Sr No.</th>
                         <th>Name</th>
                         <th>Email</th>
-						<th>Address</th>
+                        <th>Address</th>
                         <th>Phone</th>
                         <th>City</th>
                         <th>Country</th>
@@ -57,15 +39,15 @@ if (!$link) {
                             <td>
                                 <?php echo $count++; ?>
                             </td>
-                            <td><?php echo $row['name'] ?></td>
-                            <td><?php echo $row['email'] ?></td>
-                            <td><?php echo $row['address'] ?></td>
-                            <td><?php echo $row['mobile'] ?></td>
-                            <td><?php echo $row['city'] ?></td>
-                            <td><?php echo $row['country'] ?></td>
+                            <td><?php echo $row['name'] ? $row['name'] : 'N.A' ?></td>
+                            <td><?php echo $row['email'] ? $row['email'] : 'N.A' ?></td>
+                            <td><?php echo $row['address'] ? $row['address'] : 'N.A' ?></td>
+                            <td><?php echo $row['mobile'] ? $row['mobile'] : 'N.A' ?></td>
+                            <td><?php echo $row['city'] ? $row['city'] : 'N.A' ?></td>
+                            <td><?php echo $row['country'] ? $row['country'] : 'N.A' ?></td>
                             <td>
-                                <a href="./form.php?id=<?php echo $row['id'] ?>" class="edit"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                <a href="#deleteEmployeeModal" data-id="<?php echo $row['id'] ?>" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                <a href="./form.php?id=<?php echo $row['id'] ?>" class="edit mr-2">Edit</a>
+                                <a href="#deleteEmployeeModal" data-id="<?php echo $row['id'] ?>" class="delete" data-toggle="modal">Delete</a>
                             </td>
                         </tr>
                         <?php } 
@@ -101,10 +83,14 @@ if (!$link) {
 			</div>
 		</div>
 	</div>
-</body>
-</html>
-<script>
-    $(document).on('click','.delete',function(){
-        $('#user_id').val($(this).attr('data-id'));
-    });
-</script>
+    <?php
+        include('./master/script.html');
+    ?>
+    <script>
+        $(document).on('click','.delete',function(){
+            $('#user_id').val($(this).attr('data-id'));
+        });
+    </script>
+<?php
+include('./master/footer.html');
+?>

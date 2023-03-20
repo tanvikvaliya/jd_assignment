@@ -1,5 +1,4 @@
-/* ===== Google Font Import - Poppins ===== */
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -153,21 +152,4 @@ form .buttons{
 form .buttons button , .backBtn{
     margin-right: 14px;
 }
-
-@media (max-width: 750px) {
-    .container form{
-        overflow-y: scroll;
-    }
-    .container form::-webkit-scrollbar{
-       display: none;
-    }
-    form .fields .input-field{
-        width: calc(100% / 2 - 15px);
-    }
-}
-
-@media (max-width: 550px) {
-    form .fields .input-field{
-        width: 100%;
-    }
-}
+ */
