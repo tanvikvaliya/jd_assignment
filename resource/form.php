@@ -5,7 +5,7 @@
     //if user_id exist in get then record fetch
     if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
         $page_title = 'Update';
-        $sql = "SELECT * FROM user_master where id = ".$_GET['id']." ";
+        $sql = "SELECT id,name,email,mobile,address,city,country FROM user_master where id = ".$_GET['id']." ";
         $result = mysqli_query($link, $sql);
         $row = mysqli_fetch_assoc($result);
     }
