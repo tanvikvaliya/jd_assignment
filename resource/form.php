@@ -8,6 +8,7 @@
         $sql = "SELECT id,name,email,mobile,address,city,country FROM user_master where id = ".$_GET['id']." ";
         $result = mysqli_query($link, $sql);
         $row = mysqli_fetch_assoc($result);
+        mysqli_close($link);
     }
 ?>
 <title><?php echo $page_title ?></title>

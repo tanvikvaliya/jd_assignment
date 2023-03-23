@@ -26,9 +26,9 @@
 
     // executing update/insert query
     if(mysqli_query($link, $sql)){
+        mysqli_close($link);
         header("location: index.php");
     }else{
         echo "Something went wrong! please check the code";
-    } 
-    $link->close(); 
+    }
 ?>
