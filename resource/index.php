@@ -26,7 +26,7 @@ include('./common/header.php');
                 <tbody>
                     <?php
                     // fetch existed record from user_master table
-                    $sql = "SELECT * FROM user_master";
+                    $sql = "SELECT id,name,email,mobile,address,city,country FROM user_master";
                     $result = mysqli_query($link, $sql);
                     $count = 1;
                     // count row of data if > 0 then will be print
